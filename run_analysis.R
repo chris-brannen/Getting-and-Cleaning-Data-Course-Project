@@ -63,5 +63,9 @@ tidy_data <- aggregate(prep_for_tidy_data[,3:88], by = list(prep_for_tidy_data$S
 # Assign column names to tidy data set so that the first two columns
 # are named Subject and Activity instead of Group.1 and Group.2
 colnames(tidy_data) <- colnames(prep_for_tidy_data)
+
+# Sort tidy data set first by Subject, then by Activity
+tidy_data <- tidy_data[order(tidy_data$Subject, tidy_data$Activity),]
+
 # Write the tidy data set out to a text file named tidy_data.txt without row names.
 write.table(tidy_data, file="data\\tidy_data.txt",row.names=FALSE,col.names=TRUE)
