@@ -8,9 +8,9 @@
 
 				a.) ..\\UCI HAR Dataset\\activity_labels.txt
 				b.) ..\\UCI HAR Dataset\\features.txt
-				c.) .\\UCI HAR Dataset\\train\\X_train.txt
+				c.) ..\\UCI HAR Dataset\\train\\X_train.txt
 				d.) ..\\UCI HAR Dataset\\train\\y_train.txt
-				e.) .\\UCI HAR Dataset\\train\\subject_train.txt
+				e.) ..\\UCI HAR Dataset\\train\\subject_train.txt
 				f.) ..\\UCI HAR Dataset\\test\\X_test.txt
 				g.) ..\\UCI HAR Dataset\\test\\y_test.txt
 				h.) ..\\UCI HAR Dataset\\test\\subject_test.txt
