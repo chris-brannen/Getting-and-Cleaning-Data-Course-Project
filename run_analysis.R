@@ -6,12 +6,12 @@ column_names <- features[,2]
 activity_labels <- read.table("UCI HAR Dataset\\activity_labels.txt", sep=" ")
 
 # Read in training data and label column names
-trainData <- read.table(file="UCI HAR Dataset\\train\\X_Train.txt", sep="")
+trainData <- read.table(file="UCI HAR Dataset\\train\\X_train.txt", sep="")
 colnames(trainData) <- column_names
 
 # Read in training data activities, assign column name, and transform Activity column from numeric to 
 # descriptive named factor form.
-trainData_y <- read.table(file="UCI HAR Dataset\\train\\y_Train.txt", sep="")
+trainData_y <- read.table(file="UCI HAR Dataset\\train\\y_train.txt", sep="")
 colnames(trainData_y) <- "Activity"
 trainData_y$Activity <- factor(trainData_y$Activity, levels = activity_labels[,1], labels = activity_labels[,2])
 
@@ -53,15 +53,15 @@ extraction_column_indices <- sort(extraction_column_indices)
 extraction_column_indices <- extraction_column_indices + 2
 extraction_column_indices <- c(1,2,extraction_column_indices)
 # Extract the Subject, Activity, and all mean and standard deviation based 
-# columns and store in data.frame tidy_data.
-tidy_data <- mergedData[,extraction_column_indices]
+# columns and store in data.frame prep_for_tidy_data.
+prep_for_tidy_data <- mergedData[,extraction_column_indices]
 
 # While grouping by Subject and Activity, compute the mean of all numeric columns
 # such that we now have a tidy data set containing means of means and means of standard 
 # deviations for the data grouped by Subject and Activity.
-aggregate_tidy_data <- aggregate(tidy_data[,3:88], by = list(tidy_data$Subject,tidy_data$Activity), FUN = "mean")
-# Assign column names to aggregated tidy data set so that the first two columns
+tidy_data <- aggregate(prep_for_tidy_data[,3:88], by = list(prep_for_tidy_data$Subject,prep_for_tidy_data$Activity), FUN = "mean")
+# Assign column names to tidy data set so that the first two columns
 # are named Subject and Activity instead of Group.1 and Group.2
-colnames(aggregate_tidy_data) <- colnames(tidy_data)
-# Write the aggregated tidy data set out to a text file named tidy_data.txt without row names.
-write.table(aggregate_tidy_data, file="data\\tidy_data.txt",row.names=FALSE,col.names=TRUE)
+colnames(tidy_data) <- colnames(prep_for_tidy_data)
+# Write the tidy data set out to a text file named tidy_data.txt without row names.
+write.table(tidy_data, file="data\\tidy_data.txt",row.names=FALSE,col.names=TRUE)
