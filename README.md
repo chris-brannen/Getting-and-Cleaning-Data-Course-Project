@@ -15,7 +15,7 @@
 				g.) ..\\UCI HAR Dataset\\test\\y_test.txt
 				h.) ..\\UCI HAR Dataset\\test\\subject_test.txt
 				
- 3. There exists a data directory within your R working directory such that the code in run_analysis.R can output to files to within the subdirectory .\\data
+ 3. There exists a data directory within your R working directory such that the code in run_analysis.R can output files to the subdirectory ..\\data
 
 ###Code Book / Data Dictionary:
 
