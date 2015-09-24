@@ -5,15 +5,15 @@
 
  1. The dataset with top level directory "UCI HAR Dataset" exists within your R working directory.
  2. The "UCI HAR Dataset" contains the following files:
-				..\\UCI HAR Dataset\\activity_labels.txt
-				..\\UCI HAR Dataset\\features.txt
-				..\\UCI HAR Dataset\\train\\X_train.txt
-				..\\UCI HAR Dataset\\train\\y_train.txt
-				..\\UCI HAR Dataset\\train\\subject_train.txt
-				..\\UCI HAR Dataset\\test\\X_test.txt
-				..\\UCI HAR Dataset\\test\\y_test.txt
-				..\\UCI HAR Dataset\\test\\subject_test.txt
-3. There exists a data directory within your R working directory such that the code in run_analysis.R can output to files to within the subdirectory .\\data
+				a.) ..\\UCI HAR Dataset\\activity_labels.txt
+				b.) ..\\UCI HAR Dataset\\features.txt
+				c.) .\\UCI HAR Dataset\\train\\X_train.txt
+				d.) ..\\UCI HAR Dataset\\train\\y_train.txt
+				e.) .\\UCI HAR Dataset\\train\\subject_train.txt
+				f.) ..\\UCI HAR Dataset\\test\\X_test.txt
+				g.) ..\\UCI HAR Dataset\\test\\y_test.txt
+				h.) ..\\UCI HAR Dataset\\test\\subject_test.txt
+ 3. There exists a data directory within your R working directory such that the code in run_analysis.R can output to files to within the subdirectory .\\data
 
 ###Code Book / Data Dictionary:
 
